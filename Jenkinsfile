@@ -1,10 +1,10 @@
 pipeline {
 
   environment {
-    PROJECT = "srinag"
-    APP_NAME = "product"
-    FE_SVC_NAME = "${APP_NAME}-product"
-    CLUSTER = "hipstar"
+    PROJECT = "ascendant-timer-350911"
+    APP_NAME = "adservice"
+    FE_SVC_NAME = "${APP_NAME}-adservice"
+    CLUSTER = "jarvis"
     CLUSTER_ZONE = "us-central1-c"
     IMAGE_TAG = "gcr.io/${PROJECT}/${APP_NAME}"
     JENKINS_CRED = "${PROJECT}"
@@ -63,7 +63,7 @@ spec:
       steps {
         container('kubectl') {
           
-          sh "gcloud container clusters get-credentials hipstar --zone us-central1-c --project srinag"
+          sh "gcloud container clusters get-credentials jarvis --zone us-central1-c --project ascendant-timer-350911"
           sh "kubectl apply -f productcatalogservice.yaml"
         }
       }
