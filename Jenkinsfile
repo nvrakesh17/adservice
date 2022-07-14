@@ -11,7 +11,7 @@ pipeline {
   }
 
   agent {
-   # kubernetes {
+    kubernetes {
       inheritFrom 'sample-app'
       defaultContainer 'jnlp'
       yaml """
@@ -64,7 +64,7 @@ spec:
         container('kubectl') {
           
           sh "gcloud container clusters get-credentials jarvis --zone us-central1-c --project ascendant-timer-350911"
-          sh "kubectl apply -f productcatalogservice.yaml"
+          sh "kubectl apply -f adservice.yaml"
         }
       }
     }
