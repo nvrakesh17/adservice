@@ -11,7 +11,7 @@ pipeline {
   }
 
   agent {
-    kubernetes {
+   # kubernetes {
       inheritFrom 'sample-app'
       defaultContainer 'jnlp'
       yaml """
